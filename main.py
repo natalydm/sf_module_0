@@ -51,17 +51,17 @@ def game_core_v3(number):
     count = 0
     left_gr=0
     right_gr=101
-    predict = int((right_gr-left_gr)/2)
+    predict = left_gr+((right_gr-left_gr)//2)
     while number != predict:
         
         count+=1
         if number > predict: 
             left_gr=predict
-            predict = int(predict+(right_gr-predict )/ 2)
+            predict = (predict+(right_gr-predict )// 2)
                     
         elif number < predict: 
             right_gr=predict
-            predict = int(left_gr+(predict- left_gr)/ 2)
+            predict = (left_gr+(predict- left_gr)// 2)
   
    
     return(count) # выход из цикла, если угадали
